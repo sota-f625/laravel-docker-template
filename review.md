@@ -13,11 +13,13 @@ Collectionオブジェクト
 - 可読性・保守性が高い
 
 ### view関数の第1・第2引数の指定と何をしているか
-テンプレートにデータを埋め込んでHTMLとして返す処理
+- 第1引数に表示したいbladeファイル
+- 第2引数に渡したいデータを連想配列で指定できる
 
 ### index.blade.phpの$todos・$todoに代入されているものは何か
 - $todos -> Todoモデルのレコードを複数まとめたCollectionオブジェクト
 - $todo -> Todoモデルインスタンス
+- $todosと$todoの違いは$todoはTodoクラスに定義されているtodosテーブルからインスタンス化したtodo一件のデータが代入されていて、$todosはインスタンス化された$todoをallメソッドで全件取得した返り値としてCollectionオブジェクトが代入されています
 
 ## Todo作成機能
 
@@ -66,3 +68,5 @@ CSRF対策ための記述で、記述することによってフォームにCSRF
 
 ### {{ }}とは何の省略系か
 bladeテンプレートにおけるecho(PHP)構文
+例えば{{ $todo->content }}の場合省略しない場合は以下になる
+<?pho echo e ($todo->content); ?>
