@@ -5,6 +5,10 @@
 ### @method('PUT')を記述した行に何が出力されているか
 <input type="hidden" name="_method" value="PUT">
 上記が出力されデベロッパーツールで確認することができる
+HTMLのformタグはGET, POSTしか使用できないため、
+Bladeの機能を用いてPUTメソッドを使用しています。
+こちらを使用していてもブラウザはPOSTメソッドを使用し
+Laravel側でPUT扱いに変換しています。
 
 ### findメソッドの引数に指定しているIDは何のIDか
 URLパラメータから渡されたTodoのidカラムの値
